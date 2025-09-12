@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.innerHTML = `
             <main class="container">
                 <section class="form-section">
-                    <h2>Login</h2>
+                    <h2>To-Do App Login Page: A2-AlexLi</h2>
+                    <p style="margin-bottom:1rem;color:#555;">
+                        To login or register, just enter your username and password and press the button below. If the username does not exist, an account will be created for you.
+                    </p>
                     <form id="loginForm">
                         <div class="form-group">
                             <label for="login_username">Username:</label>
@@ -17,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <label for="login_password">Password:</label>
                             <input type="password" id="login_password" name="password" required>
                         </div>
-                        <button type="submit" class="btn-primary">Login</button>
+                        <button type="submit" class="btn-primary btn btn-success">Login / Register</button>
                     </form>
                     <div id="loginMsg" style="color:red;margin-top:1rem;"></div>
                 </section>
@@ -54,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add Profile button
         if (!document.getElementById('profileBtn')) {
             const profileBtn = document.createElement('button');
-            profileBtn.textContent = 'Profile';
+            profileBtn.textContent = 'Log Out';
             profileBtn.id = 'profileBtn';
             profileBtn.className = 'btn-secondary';
             profileBtn.style.marginLeft = '1rem';
@@ -64,31 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 showLoginForm();
             };
             header.appendChild(profileBtn);
-        }
-
-        // Add Logout button
-        if (!document.getElementById('logoutBtn')) {
-            const btn = document.createElement('button');
-            btn.textContent = 'Logout';
-            btn.id = 'logoutBtn';
-            btn.className = 'btn-primary';
-            btn.style.marginLeft = '1rem';
-            btn.onclick = async function() {
-                await fetch('/logout', { method: 'POST' });
-                localStorage.removeItem('username');
-                location.reload();
-            };
-            header.appendChild(btn);
-        }
-
-        // Show username
-        if (!document.getElementById('userDisplay')) {
-            const userSpan = document.createElement('span');
-            userSpan.id = 'userDisplay';
-            userSpan.style.marginLeft = '1rem';
-            userSpan.style.fontWeight = 'bold';
-            userSpan.textContent = `User: ${localStorage.getItem('username')}`;
-            header.appendChild(userSpan);
         }
     }
 
