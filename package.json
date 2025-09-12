@@ -1,0 +1,30 @@
+{
+  "name": "a2-alexli",
+  "version": "1.0.0",
+  "description": "A two-tier web application for managing tasks with priority-based deadlines",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "task",
+    "manager",
+    "nodejs",
+    "web-app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexli888/a2-AlexLi"
+  },
+  "author": "Alex Li",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongodb": "^6.19.0"
+  }
+}
