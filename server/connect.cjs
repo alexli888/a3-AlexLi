@@ -2,8 +2,8 @@ const { MongoClient } = require('mongodb');
 require('dotenv').config({ path: './config.env' });
 
 async function connectToDatabase() {
-    const Db= process.env.ATLAS_URI;
-    const client = new MongoClient(Db);
+    const Db = process.env.ATLAS_URI;
+    const client = new MongoClient(Db, { tls: true });
 
     await client.connect()
 
