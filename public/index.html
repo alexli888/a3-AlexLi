@@ -10,46 +10,43 @@
 </head>
 <body>
     <header>
-        <h1>Task Manager</h1>
+           <h1 id="mainTitle" tabindex="0">Task Manager</h1>
         <nav>
-            <a href="/">Home</a>
-            <a href="/results">View All Tasks</a>
-            <span id="userDisplay" style="margin-left:1rem;font-weight:bold;"></span>
-            <button id="logoutBtn" class="btn-primary" style="margin-left:1rem;display:none;">Logout</button>
+              <a href="/" aria-label="Home page" tabindex="0">Home</a>
+              <a href="/results" aria-label="View all tasks" tabindex="0">View All Tasks</a>
+              <span id="userDisplay" style="margin-left:1rem;font-weight:bold;" aria-live="polite"></span>
+              <button id="logoutBtn" class="btn-primary" style="margin-left:1rem;display:none;" aria-label="Logout">Logout</button>
         </nav>
     </header>
 
     <main class="container">
-        <section class="form-section">
-            <h2>Add New Task</h2>
-            <form id="taskForm">
+        <section class="form-section" aria-labelledby="addTaskHeader">
+            <h2 id="addTaskHeader" tabindex="0">Add New Task</h2>
+            <form id="taskForm" aria-describedby="addTaskHeader">
                 <div class="form-group">
                     <label for="task">Task Description:</label>
-                    <input type="text" id="task" name="task" required>
+                    <input type="text" id="task" name="task" required aria-required="true" aria-label="Task Description">
                 </div>
-                
                 <div class="form-group">
                     <label for="priority">Priority:</label>
-                    <select id="priority" name="priority" required>
+                    <select id="priority" name="priority" required aria-required="true" aria-label="Priority">
                         <option value="">Select Priority</option>
                         <option value="high">High</option>
                         <option value="medium">Medium</option>
                         <option value="low">Low</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
                     <label for="creation_date">Creation Date:</label>
-                    <input type="date" id="creation_date" name="creation_date" required>
+                    <input type="date" id="creation_date" name="creation_date" required aria-required="true" aria-label="Creation Date">
                 </div>
-                
-                <button type="submit" class="btn-primary">Add Task</button>
+                <button type="submit" class="btn-primary" aria-label="Add Task">Add Task</button>
             </form>
         </section>
 
         <section class="recent-tasks">
-            <h2>Recent Tasks</h2>
-            <div id="taskList"></div>
+            <h2 id="recentTasksHeader" tabindex="0">Recent Tasks</h2>
+            <div id="taskList" aria-live="polite"></div>
         </section>
     </main>
 

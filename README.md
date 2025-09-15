@@ -1,6 +1,8 @@
 ## Assignment 3 - To-Do Application
 
 Link: https://a3-alexli.onrender.com/
+
+Alt link (has some issues explained below): https://a3-alex-li-2f8g.vercel.app/ 
 //////////////////////////////////////////////////////////////////
 Goal of app: The goal of this project is a task manager, in which a user can set a task description, Priority of the task (High, Medium, Low), and set a creation date(Defaulted to the day of access). It means to help organize your life.
 
@@ -54,3 +56,53 @@ I intentionally used repetition across the entire site to create a consistent, p
 - How did you use alignment to organize information and/or increase contrast for particular elements. 
 Alignment was one of my priorities to make the site organized and easy to scan. I aligned all major blocks—navigation links, task creation forms, and task lists—to consistent vertical and horizontal guides. In the “Add New Task” form, for example, all input fields are neatly left-aligned with each other, which makes the form quicker to scan and fill out. On the “Recent Tasks” and “All Tasks” lists, task names, dates, and priority labels line up in clean columns, avoiding a cluttered look. I also used alignment to enhance contrast: section headers are centered and bolded to stand apart from regular text, while buttons align directly with their associated fields so the user’s eye naturally follows the flow of information. This attention to alignment makes the site feel intentional, professional, and user-friendly.
 
+
+- **Design Achievment 2** (10 pts)
+
+### Accessibility Achievements (W3C Tips)
+
+I followed twelve W3C accessibility tips to make my site more inclusive and usable. Here’s what I did for each:
+
+1. **Use clear, simple language:**
+	All instructions, labels, and button texts use straightforward language to minimize confusion.
+
+2. **Provide descriptive page titles:**
+	Each HTML page (`index.html`, `results.html`) has a unique, descriptive `<title>` tag.
+
+3. **Label all form fields:**
+	Every input and select field in forms has a visible `<label>` associated via the `for` attribute.
+
+4. **Use sufficient color contrast:**
+	Text and background colors (e.g., purple on white, dark text on light backgrounds) meet WCAG contrast guidelines.
+
+5. **Keyboard navigation:**
+	All interactive elements (forms, buttons, links) are accessible via keyboard (Tab, Enter). Focus outlines are now visible for links and buttons.
+
+6. **Semantic HTML structure:**
+	Used semantic tags like `<header>`, `<nav>`, `<main>`, `<section>`, `<form>`, and `<table>` for better screen reader support.
+
+7. **Responsive design:**
+	CSS media queries ensure the site is usable on mobile and desktop, with readable font sizes and touch-friendly buttons.
+
+8. **Accessible error messages:**
+	Login errors and form validation messages are shown in text, with clear instructions for correction.
+
+9. **ARIA attributes for dynamic content:**
+	Added `aria-live="polite"` to user display and task list containers so screen readers announce updates.
+
+10. **Consistent navigation:**
+	 Navigation links are in the same order and location on every page, aiding orientation.
+
+11. **Visible focus indicators:**
+	 CSS now provides a clear outline for focused links, buttons, and form fields, so keyboard users can see where they are.
+
+12. **Avoid using color alone for meaning:**
+	 Priority levels are indicated by both color and text labels (e.g., “High”, “Medium”, “Low”), not just color.
+
+**Summary of changes made:**
+- Added ARIA attributes to navigation, forms, and dynamic containers.
+- Improved focus outlines for all interactive elements in CSS.
+- Ensured all form fields have labels and are accessible.
+- Checked and improved color contrast for text and backgrounds.
+- Verified keyboard navigation and semantic structure.
+- Updated README to document all accessibility improvements.

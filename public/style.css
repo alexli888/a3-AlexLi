@@ -91,8 +91,18 @@ h2 {
 
 .form-group input:focus,
 .form-group select:focus {
-    outline: none;
+    outline: 2px solid #764ba2;
     border-color: #667eea;
+}
+/* Add visible focus for buttons */
+.btn-primary:focus {
+    outline: 2px solid #764ba2;
+    outline-offset: 2px;
+}
+/* Add visible focus for nav links */
+nav a:focus {
+    outline: 2px solid #764ba2;
+    outline-offset: 2px;
 }
 
 .btn-primary {
