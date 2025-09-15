@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const res = await fetch('/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
+                    body: JSON.stringify({ username, password }),
+                    credentials: 'include'
                 });
                 const data = await res.json();
                 if (res.ok) {
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function checkAuth() {
         // Try to fetch tasks; if unauthorized, show login
         try {
-            const resp = await fetch('/api/tasks');
+            const resp = await fetch('/api/tasks', { credentials: 'include' });
             if (resp.status === 401) {
                 showLoginForm();
                 return false;
@@ -126,8 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Handle form submission
-        const form = getTaskForm();
-        if (form) {
+    let form = getTaskForm();
+    if (form) {
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 const fields = getFormFields();
@@ -145,7 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             headers: {
                                 'Content-Type': 'application/json',
                             },
-                            body: JSON.stringify(taskData)
+                            body: JSON.stringify(taskData),
+                            credentials: 'include'
                         });
                         if (response.ok) {
                             resetFormMode(); // Always close form first
@@ -158,7 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             headers: {
                                 'Content-Type': 'application/json',
                             },
-                            body: JSON.stringify(taskData)
+                            body: JSON.stringify(taskData),
+                            credentials: 'include'
                         });
 
                         if (response.ok) {
@@ -188,15 +191,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Load and display tasks
         async function loadTasks() {
             try {
-                const response = await fetch('/api/tasks');
-                const tasks = await response.json();
-                
-                if (taskList) {
-                    displayRecentTasks(tasks.slice(-3));
-                }
-                
-                if (tasksTableBody) {
-                    displayAllTasks(tasks);
+                const response = await fetch('/api/tasks', { credentials: 'include' });
+                if (response.ok) {
+                    const tasks = await response.json();
+                    if (window.location.pathname === '/results') {
+                        displayAllTasks(tasks);
+                    } else {
+                        displayRecentTasks(tasks);
+                    }
+                } else {
+                    console.error('Failed to load tasks:', response.status);
                 }
             } catch (error) {
                 console.error('Error loading tasks:', error);
@@ -301,7 +305,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (confirm('Are you sure you want to delete this task?')) {
                 try {
                     const response = await fetch(`/api/tasks/${id}`, {
-                        method: 'DELETE'
+                        method: 'DELETE',
+                        credentials: 'include'
                     });
 
                     if (response.ok) {
