@@ -3,7 +3,9 @@
 Link: https://a3-alexli.onrender.com/
 
 Alt link (has some issues explained below): https://a3-alex-li-2f8g.vercel.app/ 
-//////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////// 
+
+
 Goal of app: The goal of this project is a task manager, in which a user can set a task description, Priority of the task (High, Medium, Low), and set a creation date(Defaulted to the day of access). It means to help organize your life.
 
 Hardest part of project was trying to deploy. Stressful. Figured out need to specificy for all ip addresses can access the database, that fixed it, since we are deploying on an external serrvice.,
@@ -35,11 +37,11 @@ button (type="submit" and type="button")
 ## Technical Achievements
 - **Tech Achievement 1**: 
 Instead of Render, host your site on a different service. ( 5 pts)
-- For this technical achievment I chose Vercel to host my website. However, as you can see in the top of the README, I still have render as my primary website submission, why? Well that is because I ran into some issues with Vercel that I will now explain. Take this website I host: https://a3-alex-li-2f8g.vercel.app/. It may seem all good, as its deployed, connected to MongoDB, but it skips the 'login' page whereas on Render it does start on the login page. I tried to make it start at login page but to no avail. A positive about Vercel, is that persoanllu, I found it easier work with given that I have used Vercel many times before, and I have vercel application on github, so deploying is very easy, until it doesnt work like in this situation. Overall, I will prefer Vercel, if it works, so if I were to give a recommendation, I will say try Vercel first, then if its not working, use Render. 
+- For this technical achievment I chose Vercel to host my website. However, as you can see in the top of the README, I still have render as my primary website submission, why? Well that is because I ran into some issues with Vercel that I will now explain. Take this website I host: https://a3-alex-li-2f8g.vercel.app/. It may seem all good, as its deployed, connected to MongoDB, but it skips the 'login' page whereas on Render it does start on the login page. I tried to make it start at login page but to no avail. A positive about Vercel, is that personally, I found it easier work with given that I have used Vercel many times before, and I have vercel application on github, so deploying is very easy, until it doesnt work like in this situation. Overall, I will prefer Vercel, if it works, so if I were to give a recommendation, I will say try Vercel first, then if its not working, use Render. 
 
 
 ### Design/Evaluation Achievements
-- **Design Achievement 1**: I followed the following tips from the W3C Web Accessibility Initiative... ( 5 pts)
+- **Design Achievement 1**: ( 5 pts)
 
 CRAP Principles:  least 125 words for each of four principles              NEED MAKE LONGER 
 
@@ -59,50 +61,50 @@ Alignment was one of my priorities to make the site organized and easy to scan. 
 
 - **Design Achievment 2** (10 pts)
 
-### Accessibility Achievements (W3C Tips)
-
-I followed twelve W3C accessibility tips to make my site more inclusive and usable. Here’s what I did for each:
+I followed 12 of the W3C accessibility tips to make my site more accessible and inclusive Here’s what was changed for each:
 
 1. **Use clear, simple language:**
-	All instructions, labels, and button texts use straightforward language to minimize confusion.
+   All instructions, labels, and button texts were reviewed and rewritten for clarity and simplicity (ex: "Add Task", "Task Description").
 
 2. **Provide descriptive page titles:**
-	Each HTML page (`index.html`, `results.html`) has a unique, descriptive `<title>` tag.
+   The `<title>` tag in `index.html` and `results.html` was set to describe the page purpose ("Task Manager", "All Tasks - Task Manager").
 
 3. **Label all form fields:**
-	Every input and select field in forms has a visible `<label>` associated via the `for` attribute.
+   Every input/select in forms has a `<label>` with a matching `for` attribute, and each input also received an `aria-label` for screen readers.
 
 4. **Use sufficient color contrast:**
-	Text and background colors (e.g., purple on white, dark text on light backgrounds) meet WCAG contrast guidelines.
+   CSS colors for text and backgrounds were checked and adjusted to meet WCAG contrast guidelines (e.g., purple/white, dark text on light backgrounds).
 
 5. **Keyboard navigation:**
-	All interactive elements (forms, buttons, links) are accessible via keyboard (Tab, Enter). Focus outlines are now visible for links and buttons.
+   All interactive elements (links, buttons, form fields) are reachable by keyboard. Added `tabindex="0"` to headings and navigation links for logical tab order.
 
 6. **Semantic HTML structure:**
-	Used semantic tags like `<header>`, `<nav>`, `<main>`, `<section>`, `<form>`, and `<table>` for better screen reader support.
+   Used semantic tags: `<header>`, `<nav>`, `<main>`, `<section>`, `<form>`, `<table>`, `<th scope="col">` for better accessibility and screen reader support.
 
 7. **Responsive design:**
-	CSS media queries ensure the site is usable on mobile and desktop, with readable font sizes and touch-friendly buttons.
+   CSS media queries ensure the site adapts to mobile and desktop, with readable font sizes and touch-friendly buttons.
 
 8. **Accessible error messages:**
-	Login errors and form validation messages are shown in text, with clear instructions for correction.
+   Login errors and form validation messages are displayed in text, with clear instructions for correction (e.g., "Login failed", "No tasks yet. Add your first task!").
 
 9. **ARIA attributes for dynamic content:**
-	Added `aria-live="polite"` to user display and task list containers so screen readers announce updates.
+   Added `aria-live="polite"` to the user display and task list containers so screen readers announce updates when tasks or user info change.
 
 10. **Consistent navigation:**
-	 Navigation links are in the same order and location on every page, aiding orientation.
+	Navigation links are always in the same order and location on every page. Added `aria-label` to navigation links and buttons for clarity.
 
 11. **Visible focus indicators:**
-	 CSS now provides a clear outline for focused links, buttons, and form fields, so keyboard users can see where they are.
+	CSS was updated to add a clear `outline: 2px solid #764ba2;` for focused links, buttons, and form fields, so keyboard users can see their position.
 
 12. **Avoid using color alone for meaning:**
-	 Priority levels are indicated by both color and text labels (e.g., “High”, “Medium”, “Low”), not just color.
+	Priority levels are shown with both color and text labels (e.g., "High", "Medium", "Low"), so users who can't see color still get the information.
 
-**Summary of changes made:**
-- Added ARIA attributes to navigation, forms, and dynamic containers.
-- Improved focus outlines for all interactive elements in CSS.
+**Summary of changes**
+- Added `aria-label` to navigation links, buttons, and form fields for screen reader clarity.
+- Added `aria-live="polite"` to containers that update dynamically (user display, task list).
+- Added `tabindex="0"` to headings and navigation links for improved keyboard navigation.
+- Updated CSS to provide visible focus outlines for all interactive elements.
+- Used semantic HTML tags and `scope="col"` for table headers.
+- Checked and improved color contrast for all text and backgrounds.
 - Ensured all form fields have labels and are accessible.
-- Checked and improved color contrast for text and backgrounds.
-- Verified keyboard navigation and semantic structure.
-- Updated README to document all accessibility improvements.
+- Verified keyboard navigation and logical tab order.
