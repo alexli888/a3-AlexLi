@@ -37,7 +37,10 @@ button (type="submit" and type="button")
 ## Technical Achievements
 - **Tech Achievement 1**: 
 Instead of Render, host your site on a different service. ( 5 pts)
-- For this technical achievment I chose Vercel to host my website. However, as you can see in the top of the README, I still have render as my primary website submission, why? Well that is because I ran into some issues with Vercel that I will now explain. Take this website I host: https://a3-alex-li-2f8g.vercel.app/. It may seem all good, as its deployed, connected to MongoDB, but it skips the 'login' page whereas on Render it does start on the login page. I tried to make it start at login page but to no avail. A positive about Vercel, is that personally, I found it easier work with given that I have used Vercel many times before, and I have vercel application on github, so deploying is very easy, until it doesnt work like in this situation. Overall, I will prefer Vercel, if it works, so if I were to give a recommendation, I will say try Vercel first, then if its not working, use Render. 
+- For this technical achievment I chose Vercel to host my website. However, as you can see in the top of the README, I still have render as my primary website submission, why? Well that is because I ran into some issues with Vercel that I will now explain. Take this website I host: https://a3-alex-li-2f8g.vercel.app/. It may seem all good, as its deployed, connected to MongoDB, but it skips the 'login' page whereas on Render it does start on the login page. I tried to make it start at login page but to no avail. I also found that Vercel forces you to have endpoints as severless. In addition to this it also demandins a /api prefix before every endpoint, which is weird.
+
+
+A positive about Vercel, is that personally, I found it easier work with given that I have used Vercel many times before, and I have vercel application on github, so deploying is very easy, until it doesnt work like in this situation. Overall, I will prefer Vercel, if it works, so if I were to give a recommendation, I will say try Vercel first, then if its not working, use Render. 
 
 - **Technical Achievement 2** (5 pts)
 I got 100% on all 4 lighthouse tests!!!!!! Check the repo for the .pdf results 
