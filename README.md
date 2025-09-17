@@ -72,19 +72,19 @@ I followed 12 of the W3C accessibility tips to make my site more accessible and 
    All instructions, labels, and button texts were reviewed and rewritten for clarity and simplicity (ex: "Add Task", "Task Description").
 
 2. **Provide descriptive page titles:**
-   The <title> tag in index.html and results.html was set to describe the page purpose ("Task Manager", "All Tasks - Task Manager").
+   The `<title>` tag in `index.html` and `results.html` was set to describe the page purpose ("Task Manager", "All Tasks - Task Manager").
 
 3. **Label all form fields:**
-   Every input/select in forms has a <label> with a matching for attribute, and each input also received an aria-label for screen readers.
+   Every input/select in forms has a `<label>` with a matching `for` attribute, and each input also received an `aria-label` for screen readers.
 
 4. **Use sufficient color contrast:**
    CSS colors for text and backgrounds were checked and adjusted to meet WCAG contrast guidelines (e.g., purple/white, dark text on light backgrounds).
 
 5. **Keyboard navigation:**
-   All interactive elements (links, buttons, form fields) are reachable by keyboard. Added tabindex="0" to headings and navigation links for logical tab order.
+   All interactive elements (links, buttons, form fields) are reachable by keyboard. Added `tabindex="0"` to headings and navigation links for logical tab order.
 
 6. **Semantic HTML structure:**
-   Used semantic tags: <header>, <nav>, <main>, <section>, <form>, <table>, <th scope="col"> for better accessibility and screen reader support.
+   Used semantic tags: `<header>`, `<nav>`, `<main>`, `<section>`, `<form>`, `<table>`, `<th scope="col">` for better accessibility and screen reader support.
 
 7. **Responsive design:**
    CSS media queries ensure the site adapts to mobile and desktop, with readable font sizes and touch-friendly buttons.
@@ -93,23 +93,23 @@ I followed 12 of the W3C accessibility tips to make my site more accessible and 
    Login errors and form validation messages are displayed in text, with clear instructions for correction (e.g., "Login failed", "No tasks yet. Add your first task!").
 
 9. **ARIA attributes for dynamic content:**
-   Added aria-live="polite" to the user display and task list containers so screen readers announce updates when tasks or user info change.
+   Added `aria-live="polite"` to the user display and task list containers so screen readers announce updates when tasks or user info change.
 
 10. **Consistent navigation:**
-	Navigation links are always in the same order and location on every page. Added aria-label to navigation links and buttons for clarity.
+	Navigation links are always in the same order and location on every page. Added `aria-label` to navigation links and buttons for clarity.
 
 11. **Visible focus indicators:**
-	CSS was updated to add a clear outline: 2px solid #764ba2; for focused links, buttons, and form fields, so keyboard users can see their position.
+	CSS was updated to add a clear `outline: 2px solid #764ba2;` for focused links, buttons, and form fields, so keyboard users can see their position.
 
 12. **Avoid using color alone for meaning:**
 	Priority levels are shown with both color and text labels (e.g., "High", "Medium", "Low"), so users who can't see color still get the information.
 
 **Summary of changes**
-- Added aria-label to navigation links, buttons, and form fields for screen reader clarity.
-- Added aria-live="polite" to containers that update dynamically (user display, task list).
-- Added tabindex="0" to headings and navigation links for improved keyboard navigation.
+- Added `aria-label` to navigation links, buttons, and form fields for screen reader clarity.
+- Added `aria-live="polite"` to containers that update dynamically (user display, task list).
+- Added `tabindex="0"` to headings and navigation links for improved keyboard navigation.
 - Updated CSS to provide visible focus outlines for all interactive elements.
-- Used semantic HTML tags and scope="col" for table headers.
+- Used semantic HTML tags and `scope="col"` for table headers.
 - Checked and improved color contrast for all text and backgrounds.
 - Ensured all form fields have labels and are accessible.
 - Verified keyboard navigation and logical tab order.
